@@ -7,6 +7,9 @@ life with a **Makey Makey** board in the hands-on session afterwards.
 The whole thing is static HTML/CSS/JS — no build step — and deploys to **GitHub Pages** as-is.
 Styled with Chan Meng's "Caldera" personal brand system.
 
+Created for the **Youth Tech Series — AI & Electronics Workshop** (SheSharp × Peyvand Academy ×
+Ministry of Education), 13 June 2026, Fruitvale Primary School, Auckland.
+
 ## The core idea
 
 Makey Makey pretends to be a USB keyboard. Touching a banana is the same as pressing `Space`. So a

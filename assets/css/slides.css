@@ -35,7 +35,9 @@ body {
 .deck {
   position: relative;
   height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* Progress bar (top) */
@@ -57,10 +59,18 @@ body {
   inset: 0;
   display: none;
   flex-direction: column;
+  /* "safe center" keeps the top of tall content reachable when it overflows
+     and must scroll, instead of clipping it (graceful fallback to center). */
   justify-content: center;
-  padding: clamp(28px, 6vw, 80px);
+  justify-content: safe center;
+  padding: clamp(16px, min(4.5vw, 5vh), 64px);
+  /* Reserve room for the bottom chrome (counter / hint / nav) so content
+     never hides behind it. */
+  padding-bottom: clamp(60px, 11vh, 96px);
   max-width: var(--container-max);
   margin: 0 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .slide.is-active {
@@ -109,31 +119,33 @@ body {
   font-weight: 400;
   letter-spacing: var(--text-display-tracking);
   line-height: 0.94;
-  margin: 0 0 var(--space-4);
+  margin: 0 0 clamp(14px, 2.6vh, 32px);
   color: var(--color-ink-strong);
 }
 
+/* min(vw, vh) so headings also shrink on short / landscape viewports,
+   not just narrow ones. */
 .slide h1 {
-  font-size: clamp(44px, 9vw, 128px);
+  font-size: clamp(38px, min(8.5vw, 12vh), 120px);
 }
 
 .slide h2 {
-  font-size: clamp(34px, 6.5vw, 84px);
+  font-size: clamp(30px, min(6.2vw, 9vh), 80px);
 }
 
 .slide .lead {
-  font-size: clamp(18px, 2.4vw, 28px);
+  font-size: clamp(17px, min(2.4vw, 3.2vh), 28px);
   line-height: 1.45;
   font-weight: 500;
   max-width: 24ch;
-  margin: 0 0 var(--space-4);
+  margin: 0 0 clamp(14px, 2.4vh, 32px);
 }
 
 .slide p {
-  font-size: clamp(16px, 1.9vw, 22px);
+  font-size: clamp(16px, min(1.9vw, 2.6vh), 22px);
   line-height: 1.5;
   max-width: 60ch;
-  margin: 0 0 var(--space-3);
+  margin: 0 0 clamp(12px, 2vh, 24px);
 }
 
 .slide ul {
@@ -141,14 +153,14 @@ body {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: var(--space-2);
+  gap: clamp(8px, 1.6vh, 16px);
   max-width: 60ch;
 }
 
 .slide li {
   position: relative;
   padding-left: 30px;
-  font-size: clamp(16px, 1.9vw, 22px);
+  font-size: clamp(16px, min(1.9vw, 2.6vh), 22px);
   line-height: 1.4;
 }
 
@@ -176,23 +188,34 @@ body {
 }
 
 .slide--title .hero-band {
-  width: 100%;
-  max-width: 520px;
+  width: min(460px, 62vw);
+  max-height: 17vh;
+  object-fit: cover;
   border-radius: var(--radius-card);
-  margin-bottom: var(--space-5);
+  margin-bottom: clamp(10px, 2vh, 28px);
 }
 
 .slide--title h1 {
-  font-size: clamp(52px, 11vw, 150px);
-  margin-bottom: var(--space-3);
+  font-size: clamp(44px, min(10vw, 13vh), 140px);
+  margin-bottom: clamp(12px, 2vh, 24px);
 }
 
 .byline {
   display: flex;
   align-items: center;
   gap: 14px;
-  font-size: clamp(15px, 1.8vw, 20px);
+  font-size: clamp(14px, min(1.8vw, 2.4vh), 20px);
   font-weight: 500;
+  flex-wrap: wrap;
+}
+
+/* Small event-credit line under the byline */
+.credit {
+  font-family: var(--font-mono);
+  font-size: clamp(12px, min(1.4vw, 1.9vh), 15px);
+  color: var(--color-ink-muted);
+  margin: 0;
+  max-width: 60ch;
 }
 
 .byline img {
@@ -204,37 +227,37 @@ body {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: var(--space-2);
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: clamp(10px, 1.4vw, 16px);
   max-width: 980px;
 }
 
 .card {
   background: var(--color-canvas-surface);
   border-radius: var(--radius-card);
-  padding: clamp(20px, 3vw, 36px);
+  padding: clamp(14px, min(2.6vw, 2.6vh), 28px);
 }
 
 .card .num {
   font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(22px, min(3.4vw, 4vh), 40px);
   color: var(--color-accent-primary);
   line-height: 1;
   display: block;
-  margin-bottom: var(--space-1);
+  margin-bottom: clamp(2px, 0.8vh, 8px);
 }
 
 .card h3 {
   font-family: var(--font-body-sans);
-  font-size: clamp(17px, 2vw, 22px);
+  font-size: clamp(16px, min(1.9vw, 2.4vh), 21px);
   font-weight: 700;
-  margin: 0 0 6px;
+  margin: 0 0 4px;
 }
 
 .card p {
-  font-size: clamp(14px, 1.6vw, 17px);
+  font-size: clamp(13px, min(1.5vw, 2vh), 16px);
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 /* Flow strip: real world -> signal -> computer -> action */
@@ -242,18 +265,18 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  gap: var(--space-2);
+  gap: clamp(8px, 1.2vw, 16px);
   max-width: 1000px;
 }
 
 .flow__step {
-  flex: 1 1 160px;
+  flex: 1 1 150px;
   background: var(--color-canvas-surface);
   border-radius: var(--radius-card-sm);
-  padding: clamp(16px, 2.4vw, 28px);
+  padding: clamp(12px, min(2vw, 2vh), 22px);
   text-align: center;
   font-weight: 700;
-  font-size: clamp(15px, 1.8vw, 20px);
+  font-size: clamp(13px, min(1.6vw, 2vh), 18px);
 }
 
 .flow__step span {
@@ -261,8 +284,8 @@ body {
   font-family: var(--font-display);
   font-weight: 400;
   color: var(--color-accent-primary);
-  font-size: clamp(22px, 3vw, 34px);
-  margin-bottom: 6px;
+  font-size: clamp(18px, min(2.6vw, 3vh), 30px);
+  margin-bottom: 4px;
 }
 
 .flow__arrow {
@@ -278,9 +301,9 @@ body {
 .keymap {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: clamp(6px, 1vw, 10px);
   max-width: 720px;
-  margin-top: var(--space-3);
+  margin-top: clamp(12px, 2vh, 24px);
 }
 
 .keycap {
@@ -307,11 +330,11 @@ body {
   background: var(--color-ink-strong);
   color: var(--color-canvas-page);
   border-radius: var(--radius-card);
-  padding: clamp(24px, 3.5vw, 48px);
+  padding: clamp(20px, min(3.5vw, 4vh), 48px);
   max-width: 900px;
   font-family: var(--font-mono);
-  font-size: clamp(17px, 2.3vw, 28px);
-  line-height: 1.55;
+  font-size: clamp(15px, min(2.3vw, 3vh), 28px);
+  line-height: 1.5;
 }
 
 .prompt .prompt__label {
@@ -513,5 +536,29 @@ body {
   }
   .flow__arrow {
     transform: rotate(90deg);
+  }
+  .deck__counter {
+    left: 16px;
+    bottom: 16px;
+  }
+  .deck__nav {
+    right: 14px;
+    bottom: 14px;
+  }
+  .navbtn {
+    width: 42px;
+    height: 42px;
+    font-size: 19px;
+  }
+}
+
+/* Short viewports (e.g. projector at 4:3, or landscape phones): hide the
+   centre hint so it never collides with content, and tighten the bottom band. */
+@media (max-height: 540px) {
+  .deck__hint {
+    display: none;
+  }
+  .slide {
+    padding-bottom: clamp(64px, 14vh, 84px);
   }
 }
