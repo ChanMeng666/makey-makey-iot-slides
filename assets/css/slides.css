@@ -187,14 +187,6 @@ body {
   justify-content: center;
 }
 
-.slide--title .hero-band {
-  width: min(460px, 62vw);
-  max-height: 17vh;
-  object-fit: cover;
-  border-radius: var(--radius-card);
-  margin-bottom: clamp(10px, 2vh, 28px);
-}
-
 .slide--title h1 {
   font-size: clamp(44px, min(10vw, 13vh), 140px);
   margin-bottom: clamp(12px, 2vh, 24px);
