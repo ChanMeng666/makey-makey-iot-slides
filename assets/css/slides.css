@@ -340,6 +340,13 @@ body {
   margin-bottom: var(--space-2);
 }
 
+/* Compact prompt — used on the three build slides, which also carry a heading,
+   a one-line description, and a demo button, so the prompt has to take less room. */
+.prompt--compact {
+  padding: clamp(16px, min(2.8vw, 3vh), 32px);
+  font-size: clamp(14px, min(1.9vw, 2.5vh), 22px);
+}
+
 /* ---------- Two columns ---------- */
 
 .two-col {

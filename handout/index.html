@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Student Handout — Build a Banana Piano</title>
-  <meta name="description" content="One-page guide: build a fun IoT toy with a free AI tool and a Makey Makey board." />
+  <title>Student Handout — Build Three Toys with Claude</title>
+  <meta name="description" content="One-page guide: build three fun IoT toys with Claude and a Makey Makey board." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +20,7 @@
       padding: clamp(16px, 4vw, 40px);
     }
     .sheet {
-      max-width: 880px; margin: 0 auto; background: var(--color-canvas-surface);
+      max-width: 900px; margin: 0 auto; background: var(--color-canvas-surface);
       border-radius: var(--radius-card); padding: clamp(24px, 4vw, 48px);
     }
     .eyebrow {
@@ -30,7 +30,7 @@
     .eyebrow::before { content: ""; width: 26px; height: 6px; background: var(--color-accent-primary); }
     h1 {
       font-family: var(--font-display); font-weight: 400; letter-spacing: 0.02em;
-      font-size: clamp(34px, 6vw, 56px); line-height: 0.94; margin: 0 0 6px;
+      font-size: clamp(32px, 6vw, 52px); line-height: 0.94; margin: 0 0 6px;
     }
     .sub { font-size: 16px; font-weight: 500; margin: 0 0 22px; }
     h2 {
@@ -40,13 +40,16 @@
     .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
     ol, ul { margin: 0; padding-left: 20px; }
     li { margin-bottom: 6px; font-size: 15px; }
+
+    .prompts { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 8px; }
     .prompt {
       background: var(--color-ink-strong); color: var(--color-canvas-page);
-      border-radius: var(--radius-card-sm); padding: 16px 18px; font-family: var(--font-mono);
-      font-size: 14px; line-height: 1.55; margin: 8px 0 0;
+      border-radius: var(--radius-card-sm); padding: 14px 16px; font-family: var(--font-mono);
+      font-size: 12.5px; line-height: 1.5;
     }
     .prompt b { color: var(--color-accent-primary); font-family: var(--font-body-sans);
-      font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 8px; }
+      font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 8px; }
+
     table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 6px; }
     th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid rgba(7,6,7,0.18); }
     th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
@@ -58,10 +61,10 @@
     .foot { margin-top: 20px; font-family: var(--font-mono); font-size: 12px; color: var(--color-ink-muted); }
     .foot a { color: var(--color-accent-primary); }
 
-    @media (max-width: 640px) { .cols { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .cols { grid-template-columns: 1fr; } .prompts { grid-template-columns: 1fr; } }
 
     @media print {
-      @page { margin: 12mm; }
+      @page { margin: 11mm; }
       body { padding: 0; background: #fff; }
       .sheet { box-shadow: none; border-radius: 0; padding: 0; max-width: 100%; }
       .prompt, .safety { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -71,29 +74,24 @@
 <body>
   <div class="sheet">
     <p class="eyebrow">IoT Hardware · Student Handout</p>
-    <h1>Build a Banana Piano</h1>
-    <p class="sub">Make a fun toy with a free AI tool, then play it with a Makey Makey board.</p>
+    <h1>Build Three Toys with Claude</h1>
+    <p class="sub">Make three fun toys by asking an AI called Claude, then play them with a Makey Makey board.</p>
 
     <div class="cols">
       <div>
         <h2>What you need</h2>
         <ul>
           <li>A laptop with a web browser.</li>
-          <li>A free AI tool: open one in your browser, or install Cursor (free for students).</li>
+          <li>A free Claude account: open <strong>claude.ai</strong> and sign in. Your app appears live in the preview panel (an Artifact).</li>
           <li>Later: a Makey Makey board, alligator clips, and a banana, foil, or playdough.</li>
         </ul>
 
         <h2>Three steps</h2>
         <ol>
-          <li>Open the AI tool and paste the prompt below.</li>
-          <li>Run it and play your toy with the keyboard.</li>
+          <li>Open claude.ai and paste a prompt below.</li>
+          <li>Play the toy in the preview panel with your keyboard.</li>
           <li>Clip on a banana and make it yours.</li>
         </ol>
-
-        <div class="prompt">
-          <b>The prompt to paste</b>
-          Make a fun web-page piano. When I press Space, the arrow keys, or W A S D F G, play a different musical note and flash a big colourful button for that key on the screen. Make it work with a normal keyboard.
-        </div>
       </div>
 
       <div>
@@ -110,10 +108,26 @@
 
         <h2>Make it yours</h2>
         <ul>
-          <li>Ask the AI to use your own sounds (a drum kit).</li>
-          <li>Add a score, or turn it into a small game.</li>
-          <li>Change the colours and the key labels.</li>
+          <li>Ask Claude for your own sounds or colours.</li>
+          <li>Turn the catch game into a banana joystick.</li>
+          <li>Add a high score, or a two-player mode.</li>
         </ul>
+      </div>
+    </div>
+
+    <h2>The three prompts to paste</h2>
+    <div class="prompts">
+      <div class="prompt">
+        <b>1 · Banana Piano</b>
+        Make a fun web-page piano. When I press Space, the arrow keys, or W A S D F G, play a different musical note and flash a big colourful button for that key. Make it work with a normal keyboard.
+      </div>
+      <div class="prompt">
+        <b>2 · Beat Maker</b>
+        Make a web-page drum kit. When I press Space, the arrow keys, or W A S D, play a different drum sound — kick, snare, hi-hat, clap — and flash a big pad for that key. Make it work with a normal keyboard.
+      </div>
+      <div class="prompt">
+        <b>3 · Catch Game</b>
+        Make a simple web game. Fruit falls from the top and I move a basket with the Left and Right arrow keys to catch it. Show the score and speed it up over time. Make it work with a normal keyboard.
       </div>
     </div>
 
@@ -122,7 +136,7 @@
     </div>
 
     <p class="foot">
-      Slides &amp; live demo: <a href="../index.html">Touch the World, Talk to Code</a>
+      Slides &amp; live demos: <a href="../index.html">Touch the World, Talk to Code</a>
       &middot; Chan Meng &middot; chanmeng.org
     </p>
   </div>

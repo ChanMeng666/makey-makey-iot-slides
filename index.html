@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Touch the World, Talk to Code — Build an IoT Toy in 20 Minutes</title>
-  <meta name="description" content="A 20-minute teaching demo: build a fun IoT toy with a free AI tool and a Makey Makey board. By Chan Meng." />
+  <title>Touch the World, Talk to Code — Build IoT Toys with Claude</title>
+  <meta name="description" content="A 20-minute teaching demo: build three fun IoT toys with Claude and a Makey Makey board. By Chan Meng." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,14 +21,14 @@
     <section class="slide slide--title">
       <p class="eyebrow">Youth Tech Series · AI &amp; Electronics</p>
       <h1>Touch the World,<br />Talk to Code</h1>
-      <p class="lead">Use AI to build a fun electronics toy on your laptop — then bring it to life with a banana.</p>
+      <p class="lead">Use Claude to build three fun electronics toys on your laptop — then bring them to life with a banana.</p>
       <div class="byline">
         <img src="assets/brand/chan-monkey-logo-black.svg" alt="" />
         <span>Chan Meng</span>
       </div>
       <p class="credit">AI &amp; Electronics Workshop &middot; SheSharp &times; Peyvand Academy &times; Ministry of Education<br />13 June 2026 &middot; Fruitvale Primary School, Auckland</p>
       <div class="slide-notes" hidden data-time="0:00 - 0:45">
-        Welcome to the AI and Electronics Workshop, run by SheSharp with Peyvand Academy and the Ministry of Education. In the next 20 minutes we will build a real little gadget together, mixing the two things this workshop is about: a bit of electronics and a bit of AI. By the end you will have made a toy you can play with your keyboard now, and with a banana in a few minutes. No coding experience needed.
+        Welcome to the AI and Electronics Workshop, run by SheSharp with Peyvand Academy and the Ministry of Education. In the next 20 minutes we will build three little gadgets together, mixing the two things this workshop is about: a bit of electronics and a bit of AI. We will ask an AI called Claude to write them for us. By the end you will have toys you can play with your keyboard now, and with a banana in a few minutes. No coding experience needed.
       </div>
     </section>
 
@@ -52,8 +52,8 @@
         <div class="flow__arrow">&rarr;</div>
         <div class="flow__step"><span>It acts</span>sound, light, game</div>
       </div>
-      <div class="slide-notes" hidden data-time="0:45 - 3:00">
-        Keep this plain. The Internet of Things is everyday things connected to computers. Point at the four cards. Then walk the bottom strip left to right: something happens in the real world, it becomes a signal, the computer reads it, and the computer does something back. That loop is the whole idea. We are about to build the simplest possible version of it.
+      <div class="slide-notes" hidden data-time="0:45 - 2:30">
+        Keep this plain. The Internet of Things is everyday things connected to computers. Point at the four cards. Then walk the bottom strip left to right: something happens in the real world, it becomes a signal, the computer reads it, and the computer does something back. That loop is the whole idea. We are about to build the simplest possible version of it — three times.
       </div>
     </section>
 
@@ -63,7 +63,7 @@
       <h2>Meet Makey Makey<br />— and its secret</h2>
       <p>A little board that turns a banana, some foil, playdough, or even your hand into a button.</p>
       <p class="lead" style="max-width: 40ch;">Its secret: <span class="highlight">it pretends to be your keyboard.</span></p>
-      <p>So any app that works with keys already works with bananas. That means we can build it and play it today with just the keyboard — no board needed yet.</p>
+      <p>So any app that works with keys already works with bananas. That means we can build our toys and play them today with just the keyboard — no board needed yet.</p>
       <div class="keymap">
         <div class="keycap keycap--accent">&uarr;</div>
         <div class="keycap keycap--accent">&darr;</div>
@@ -77,102 +77,129 @@
         <div class="keycap">F</div>
         <div class="keycap">G</div>
       </div>
-      <div class="slide-notes" hidden data-time="3:00 - 6:00">
-        This is the heart of the talk. Hold up the board if you have one. Makey Makey does one clever trick: to the computer it looks exactly like a keyboard. Touching a banana is the same as pressing the Space bar. These are the keys it can send. Because of that secret, we do not need the hardware to start. We can build our toy now and test it with the keyboard, and later the very same toy will work when you clip on a banana. Nothing in the code has to change.
+      <div class="slide-notes" hidden data-time="2:30 - 4:30">
+        This is the heart of the talk. Hold up the board if you have one. Makey Makey does one clever trick: to the computer it looks exactly like a keyboard. Touching a banana is the same as pressing the Space bar. These are the keys it can send. Because of that secret, we do not need the hardware to start. We can build our toys now and test them with the keyboard, and later the very same toys will work when you clip on a banana. Nothing in the code has to change.
       </div>
     </section>
 
-    <!-- 4. BUILD BY ASKING -->
+    <!-- 4. MEET CLAUDE (THE AI PART) -->
     <section class="slide">
       <p class="eyebrow">The AI part</p>
-      <h2>Let's build it —<br />just by asking</h2>
-      <p>You do not need to know how to code. You tell a free AI tool what you want, in plain English, and it writes the code for you.</p>
+      <h2>Meet Claude,<br />our AI builder</h2>
+      <p>You do not need to know how to code. You ask Claude what you want, in plain English, and it writes the app for you.</p>
       <div class="two-col">
         <div class="card">
           <span class="num">A</span>
-          <h3>In your browser</h3>
-          <p>Open a free AI builder and sign in with a Google account. Nothing to install — great on school laptops.</p>
+          <h3>Free in your browser</h3>
+          <p>Open <strong>claude.ai</strong> and sign in for free. Nothing to install — great on school laptops.</p>
         </div>
         <div class="card">
           <span class="num">B</span>
-          <h3>On your own computer</h3>
-          <p>Install Cursor — a free code editor for students with AI built in. No credit card needed.</p>
+          <h3>Watch it build live</h3>
+          <p>As Claude writes, your app appears in a preview panel beside the chat. That panel is called an <strong>Artifact</strong> — click it and play straight away.</p>
         </div>
       </div>
-      <p style="margin-top: var(--space-3);">Open one now. We will type the same words together.</p>
-      <div class="slide-notes" hidden data-time="6:00 - 8:00">
-        Reassure them: you are not expected to write code. You describe what you want and the AI writes it. Give the two free routes. Route A, browser, is the safest bet in a classroom because there is nothing to install. Route B, Cursor, is for anyone who wants to keep building at home on their own computer. Ask everyone to open one of them now so they are ready to type with you on the next slide.
+      <p style="margin-top: var(--space-3);">Open <span class="highlight">claude.ai</span> now. We will build <strong>three</strong> toys together — typing the words live each time.</p>
+      <div class="slide-notes" hidden data-time="4:30 - 6:00">
+        Reassure them: you are not expected to write code. You describe what you want and Claude writes it. Tell them to open claude.ai in the browser and sign in — the free plan is enough and there is nothing to install, which is ideal on school laptops. The key thing to show: when Claude writes a web app, it renders live in the Artifact preview panel right next to the chat, so you see and play your toy immediately. Get everyone to claude.ai now. We are about to build three toys in a row, and they type the prompt with me each time.
       </div>
     </section>
 
-    <!-- 5. THE PROMPT -->
+    <!-- 5. BUILD 1: BANANA PIANO -->
     <section class="slide">
-      <p class="eyebrow">Type this with me</p>
-      <h2>The magic words</h2>
-      <div class="prompt">
-        <span class="prompt__label">Copy this into the AI tool</span>
-        Make a fun web-page piano. When I press Space, the arrow keys, or W A S D F G, play a different musical note and flash a big colourful button for that key on the screen. Make it work with a normal keyboard.
+      <p class="eyebrow">Build 1 of 3 · Music</p>
+      <h2>A Banana Piano</h2>
+      <p>Press a key, hear a note, watch a big button flash. Our first toy — type this with me.</p>
+      <div class="prompt prompt--compact">
+        <span class="prompt__label">Type this into Claude</span>
+        Make a fun web-page piano. When I press Space, the arrow keys, or W A S D F G, play a different musical note and flash a big colourful button for that key. Make it work with a normal keyboard.
       </div>
-      <p style="margin-top: var(--space-3);">That is the whole prompt. Press enter and watch it build your toy.</p>
-      <div class="slide-notes" hidden data-time="8:00 - 10:30">
-        Read the prompt out loud slowly while everyone types it. Keep it exactly this short — it is enough. Stress the last sentence, make it work with a normal keyboard, because that is what lets them play it without the board. Once they press enter, give it a moment to generate. If a few students fall behind, that is fine, the backup demo on the next slide works for everyone.
-      </div>
-    </section>
-
-    <!-- 6. PLAY IT -->
-    <section class="slide">
-      <p class="eyebrow">Try it now</p>
-      <h2>Play it</h2>
-      <p>Run what the AI made and press the keys. Each one should light up and play a note.</p>
-      <p><span class="highlight">No Makey Makey is plugged in yet</span> — this is just your keyboard. Every key on screen is also labelled with the Makey Makey button it will become.</p>
       <div class="btn-row">
-        <a class="btn btn--primary" href="demo/index.html">Open the working demo</a>
-        <a class="btn btn--ghost" href="handout/index.html">Open the handout</a>
+        <a class="btn btn--primary" href="demo/piano/index.html">Open the finished piano</a>
       </div>
-      <div class="slide-notes" hidden data-time="10:30 - 14:30">
-        Let them play their own version first. Then switch to the working demo (the orange button) as the reliable shared example — it always works. Press a few keys so everyone hears the notes and sees the keys flash. Point out twice: nothing is plugged in, this is only the keyboard. Show that each on-screen key has a Makey Makey label, so they can already picture which banana will do what. This is the moment to let the room get noisy and have fun.
+      <div class="slide-notes" hidden data-time="6:00 - 9:30">
+        Read the prompt out loud slowly while everyone types it into Claude. Keep it exactly this short — it is enough. Stress the last sentence, make it work with a normal keyboard, because that is what lets them play it without the board. Press enter and watch the Artifact panel build the piano live. Play a few keys so the room hears it. If anyone falls behind or the network is slow, open the finished piano with the orange button — it always works. This first build is the longest because you are also teaching the rhythm of ask, watch, play.
       </div>
     </section>
 
-    <!-- 7. ADD A BANANA -->
+    <!-- 6. BUILD 2: BEAT MAKER -->
+    <section class="slide">
+      <p class="eyebrow">Build 2 of 3 · Rhythm</p>
+      <h2>A Beat Maker</h2>
+      <p>Same idea, drum sounds instead of notes. Tap out a beat on the keyboard.</p>
+      <div class="prompt prompt--compact">
+        <span class="prompt__label">Type this into Claude</span>
+        Make a web-page drum kit. When I press Space, the arrow keys, or W A S D, play a different drum sound — kick, snare, hi-hat, clap — and flash a big pad for that key. Make it work with a normal keyboard.
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="demo/drums/index.html">Open the finished beat maker</a>
+      </div>
+      <div class="slide-notes" hidden data-time="9:30 - 12:30">
+        Now they have the rhythm, so this one is faster. Point out that we barely changed the prompt — we swapped musical notes for drum sounds. That is a best practice worth naming: start from something that works and ask for a small change. Build it live, then let two students tap out a beat together. Backup is the orange button. Keep the energy up — this is the noisy, fun one.
+      </div>
+    </section>
+
+    <!-- 7. BUILD 3: CATCH GAME -->
+    <section class="slide">
+      <p class="eyebrow">Build 3 of 3 · A game</p>
+      <h2>A Catch Game</h2>
+      <p>Move a basket with the Left and Right arrow keys and catch the falling fruit. Keep score.</p>
+      <div class="prompt prompt--compact">
+        <span class="prompt__label">Type this into Claude</span>
+        Make a simple web game. Fruit falls from the top and I move a basket with the Left and Right arrow keys to catch it. Show the score and speed it up over time. Make it work with a normal keyboard.
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="demo/catch/index.html">Open the finished game</a>
+      </div>
+      <div class="slide-notes" hidden data-time="12:30 - 15:30">
+        The third toy shows that the same trick builds a game, not just sound. Only the arrow keys are used, which is perfect for a banana joystick later. Build it live and play one quick round so they see the score climb. By now they should believe they can ask Claude for almost anything. Backup is the orange button. If you are short on time, this is the build to keep briefest.
+      </div>
+    </section>
+
+    <!-- 8. ADD A BANANA -->
     <section class="slide">
       <p class="eyebrow">The bridge</p>
       <h2>Now add a banana</h2>
-      <p>Clip Makey Makey to fruit, foil, or playdough and those keys become things you can touch. <span class="highlight">Same toy, same code — just a new way to press the keys.</span></p>
-      <p>That is the bridge between the real world and code: your touch becomes a tiny signal, the computer reads it, and your toy responds.</p>
+      <p>Clip Makey Makey to fruit, foil, or playdough and those keys become things you can touch. <span class="highlight">Same toys, same code — just a new way to press the keys.</span></p>
+      <p>That is the bridge between the real world and code: your touch becomes a tiny signal, the computer reads it, and your toy responds — piano, drums, or game.</p>
       <ul>
-        <li>Swap in your own sounds to make a drum kit.</li>
-        <li>Add a score, or turn the arrow keys into a little game.</li>
+        <li>Bananas on the arrow keys turn the catch game into a body controller.</li>
+        <li>Foil pads become drum triggers you can stomp or slap.</li>
+        <li>Ask Claude for one more change — your own sounds, new colours, a high score.</li>
       </ul>
-      <div class="slide-notes" hidden data-time="14:30 - 17:30">
-        Connect back to the IoT loop from slide two: real world, signal, computer, action. The big reveal is that adding the hardware changes nothing in the code — the banana just presses Space for you. In a moment they will get the boards and do exactly this. Plant one or two upgrade ideas so the hands-on time has direction: record your own sounds, or add a score. Encourage them to keep asking the AI for changes.
+      <div class="slide-notes" hidden data-time="15:30 - 17:30">
+        Connect back to the IoT loop from slide two: real world, signal, computer, action. The big reveal is that adding the hardware changes nothing in the code — the banana just presses Space or an arrow for you. In a moment they will get the boards and do exactly this with any of the three toys. Plant ideas so the hands-on time has direction: turn the game into a banana joystick, make foil drum pads, or ask Claude to change the sounds. Encourage them to keep asking Claude for small changes.
       </div>
     </section>
 
-    <!-- 8. YOUR TURN -->
+    <!-- 9. YOUR TURN -->
     <section class="slide slide--title">
       <p class="eyebrow">Over to you</p>
       <h2>Your turn</h2>
       <ul style="margin-bottom: var(--space-4);">
-        <li><strong>1.</strong> Open the AI tool and type the prompt.</li>
+        <li><strong>1.</strong> Open claude.ai and type a prompt.</li>
         <li><strong>2.</strong> Play your toy with the keyboard.</li>
         <li><strong>3.</strong> Clip on a banana and make it yours.</li>
       </ul>
-      <p style="font-size: clamp(14px,1.7vw,18px); max-width:60ch;">Next: grab a Makey Makey board and make your toy real. Safety first — only fruit, foil, and playdough. Hold the metal Earth bar so the circuit works. Never use mains electricity.</p>
+      <p style="font-size: clamp(14px,1.7vw,18px); max-width:60ch;">All three prompts are on the handout. Next: grab a Makey Makey board and make a toy real. Safety first — only fruit, foil, and playdough. Hold the metal Earth bar so the circuit works. Never use mains electricity.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="demo/index.html">Open the three demos</a>
+        <a class="btn btn--ghost" href="handout/index.html">Open the handout</a>
+      </div>
       <div class="byline" style="margin-top: var(--space-4);">
         <img src="assets/brand/chan-monkey-logo-black.svg" alt="" />
         <span>Thank you — Chan Meng · chanmeng.org · github.com/ChanMeng666</span>
       </div>
       <p class="credit">Youth Tech Series · AI &amp; Electronics Workshop &middot; SheSharp &times; Peyvand Academy &times; Ministry of Education</p>
       <div class="slide-notes" hidden data-time="17:30 - 20:00">
-        Recap the three steps so anyone can repeat this at home. Read the safety line clearly before handing out the boards: conductive food and foil only, hold the Earth bar to complete the circuit, never anything connected to mains power. Then thank them and hand over to the hands-on session. Leave the demo and handout links on screen.
+        Recap the three steps so anyone can repeat this at home with Claude. Point them to the handout, which has all three prompts. Read the safety line clearly before handing out the boards: conductive food and foil only, hold the Earth bar to complete the circuit, never anything connected to mains power. Then thank them and hand over to the hands-on session. Leave the demos and handout links on screen.
       </div>
     </section>
 
   </div>
 
   <!-- Chrome -->
-  <div class="deck__counter"><span id="counter">1</span> / 8</div>
+  <div class="deck__counter"><span id="counter">1</span> / 9</div>
   <div class="deck__hint">Arrow keys or Space to move &middot; press N for notes</div>
   <div class="deck__nav">
     <button class="navbtn" id="prev" aria-label="Previous slide">&larr;</button>

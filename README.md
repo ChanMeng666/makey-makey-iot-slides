@@ -1,8 +1,9 @@
 # Touch the World, Talk to Code
 
-A 20-minute teaching slideshow about **IoT hardware** for students aged 12-18, with a build-along
-demo. Students use a **free AI tool** to vibe-code a fun web toy (a "Banana Piano"), then bring it to
-life with a **Makey Makey** board in the hands-on session afterwards.
+A 20-minute teaching slideshow about **IoT hardware** for students aged 12-18, with three build-along
+demos. Students use **Claude** (free, in the browser) to vibe-code three fun web toys — a **Banana
+Piano**, a **Beat Maker**, and a **Catch Game** — then bring them to life with a **Makey Makey** board
+in the hands-on session afterwards.
 
 The whole thing is static HTML/CSS/JS — no build step — and deploys to **GitHub Pages** as-is.
 Styled with Chan Meng's "Caldera" personal brand system.
@@ -14,16 +15,27 @@ Ministry of Education), 13 June 2026, Fruitvale Primary School, Auckland.
 
 Makey Makey pretends to be a USB keyboard. Touching a banana is the same as pressing `Space`. So a
 web page that responds to key presses works **identically** whether the input is your keyboard (during
-the talk) or a banana (during the hands-on). The app needs **no hardware to build and play** — the
+the talk) or a banana (during the hands-on). The toys need **no hardware to build and play** — the
 board only changes *how* the keys get pressed.
+
+## Why Claude
+
+We build all three toys live with [claude.ai](https://claude.ai): it is free to start, runs in the
+browser (nothing to install on locked-down school laptops), and renders each app in its **Artifact**
+live-preview panel — so the class sees and plays the toy the moment Claude finishes writing it. Because
+it is fast, we can build three toys in 20 minutes and show students more than one "best practice"
+(starting from something that works and asking for one small change).
 
 ## What's inside
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | The 8-slide deck. Arrow keys / Space to move, `N` for speaker notes. |
-| `demo/index.html` | The runnable Banana Piano. Keyboard-playable, Web Audio (no sound files). |
-| `handout/index.html` | One-page printable student handout (print to one page). |
+| `index.html` | The 9-slide deck. Arrow keys / Space to move, `N` for speaker notes. |
+| `demo/index.html` | Gallery hub linking the three finished toys. |
+| `demo/piano/index.html` | Banana Piano — keyboard-playable, Web Audio notes (no sound files). |
+| `demo/drums/index.html` | Beat Maker — Web Audio drum kit (kick, snare, hi-hat, clap, tom). |
+| `demo/catch/index.html` | Catch Game — arrow-key basket catches falling fruit, with score. |
+| `handout/index.html` | One-page printable student handout with all three prompts. |
 | `notes/speaker-notes.md` | Per-slide talking points with minute-by-minute timing. |
 | `assets/` | Brand tokens, deck styles, navigation script, logo + halftone art. |
 
@@ -32,23 +44,22 @@ board only changes *how* the keys get pressed.
 1. Open `index.html` in a browser and press `F` (or your browser's full-screen).
 2. Navigate: **Arrow keys**, **Space**, or **Page Up/Down**. `Home` / `End` jump to first / last.
 3. Press **N** to show speaker notes with the timing for the current slide. `Esc` hides them.
-4. On the "Play it" slide, click **Open the working demo** to switch to `demo/index.html` as a
-   reliable live example.
+4. On each build slide, the orange button opens the finished toy as a reliable backup if Claude is slow
+   or blocked on the school network.
 
-The students' build-along prompt (kept short on purpose):
+The three build-along prompts (kept short on purpose):
 
-> Make a fun web-page piano. When I press Space, the arrow keys, or W A S D F G, play a different
-> musical note and flash a big colourful button for that key on the screen. Make it work with a
+> **1 · Banana Piano** — Make a fun web-page piano. When I press Space, the arrow keys, or W A S D F G,
+> play a different musical note and flash a big colourful button for that key. Make it work with a
 > normal keyboard.
 
-## Free AI tools (as of June 2026)
+> **2 · Beat Maker** — Make a web-page drum kit. When I press Space, the arrow keys, or W A S D, play a
+> different drum sound — kick, snare, hi-hat, clap — and flash a big pad for that key. Make it work
+> with a normal keyboard.
 
-- **In the browser (recommended for classrooms):** a free AI builder you sign into with a Google
-  account — nothing to install, works on locked-down school laptops.
-- **On your own computer:** [Cursor](https://cursor.com) — a free code editor for students with AI
-  built in, no credit card.
-- Note: Google's Gemini CLI free tier is being retired on **18 June 2026**, so the deck deliberately
-  stays tool-agnostic rather than depending on any one CLI.
+> **3 · Catch Game** — Make a simple web game. Fruit falls from the top and I move a basket with the
+> Left and Right arrow keys to catch it. Show the score and speed it up over time. Make it work with a
+> normal keyboard.
 
 ## Deploy to GitHub Pages
 
@@ -58,7 +69,7 @@ The students' build-along prompt (kept short on purpose):
    then **Save**.
 4. After a minute the site is live:
    - Slides: `https://<user>.github.io/<repo>/`
-   - Demo: `https://<user>.github.io/<repo>/demo/`
+   - Demos: `https://<user>.github.io/<repo>/demo/`
    - Handout: `https://<user>.github.io/<repo>/handout/`
 
 A `.nojekyll` file is included so the `assets/` and `demo/` folders are served unchanged.
