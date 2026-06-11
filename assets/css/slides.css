@@ -252,6 +252,11 @@ body {
   line-height: 1.35;
 }
 
+.card a {
+  color: var(--color-accent-primary);
+  text-underline-offset: 2px;
+}
+
 /* Flow strip: real world -> signal -> computer -> action */
 .flow {
   display: flex;
