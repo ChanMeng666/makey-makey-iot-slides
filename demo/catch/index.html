@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catch Game — Makey Makey Demo</title>
-  <meta name="description" content="A keyboard-playable catch game. Move the basket with the arrow keys. Works with a Makey Makey too." />
+  <title>Catch &amp; Dodge — Makey Makey Demo</title>
+  <meta name="description" content="A keyboard-playable catch-and-dodge game. Catch the fruit with the arrow keys but dodge the bombs. Works with a Makey Makey too." />
 
   <link rel="icon" type="image/svg+xml" href="../../assets/brand/favicon.svg" />
 
@@ -95,11 +95,11 @@
 <body>
   <div class="wrap">
     <p class="eyebrow">Makey Makey Demo · 3 of 3</p>
-    <h1>Catch Game</h1>
+    <h1>Catch &amp; Dodge</h1>
 
     <div class="banner">
       <strong>No Makey Makey needed yet.</strong> Move the basket with the <strong>Left</strong> and <strong>Right</strong> arrow keys
-      and catch the falling fruit. Clip bananas to the arrow keys later and you can steer with your body.
+      to catch the falling fruit — but dodge the bombs. Clip bananas to the arrow keys later and you can steer with your body.
     </div>
 
     <div class="hud">
@@ -112,8 +112,8 @@
     <div class="stage">
       <canvas id="game" width="880" height="520" aria-label="Catch game"></canvas>
       <div class="overlay" id="overlay">
-        <h2 id="ovTitle">Catch the fruit</h2>
-        <p id="ovText">Press Space or Start. Move with the Left and Right arrow keys.</p>
+        <h2 id="ovTitle">Catch &amp; dodge</h2>
+        <p id="ovText">Catch the fruit, dodge the bombs. Press Space or Start, then move with the Left and Right arrow keys.</p>
       </div>
     </div>
 
@@ -178,7 +178,13 @@
       var x = r + (W - 2 * r) * fakeRandom();
       var fall = 150 + score * 7;
       if (fall > 520) fall = 520;
-      fruits.push({ x: x, y: -r, r: r, vy: fall, color: COLORS[fruits.length % COLORS.length] });
+      // Roughly 1-in-5 spawns is a bomb, rising a little as the score climbs.
+      var bombChance = Math.min(0.32, 0.18 + score * 0.004);
+      var isBomb = fakeRandom() < bombChance;
+      fruits.push({
+        x: x, y: -r, r: isBomb ? 17 : r, vy: fall, isBomb: isBomb,
+        color: isBomb ? "#2A2730" : COLORS[fruits.length % COLORS.length]
+      });
     }
 
     // Deterministic-enough spread without Math.random seeding issues across frames.
@@ -210,13 +216,17 @@
           (f.y - f.r <= basket.y + basket.h);
         if (caught) {
           fruits.splice(i, 1);
-          score += 1;
-          scoreEl.textContent = score;
+          if (f.isBomb) {
+            lives -= 1;
+            livesEl.textContent = lives;
+            if (lives <= 0) { gameOver(); return; }
+          } else {
+            score += 1;
+            scoreEl.textContent = score;
+          }
         } else if (f.y - f.r > H) {
+          // Missed fruit just falls away now — only catching a bomb costs a life.
           fruits.splice(i, 1);
-          lives -= 1;
-          livesEl.textContent = lives;
-          if (lives <= 0) { gameOver(); return; }
         }
       }
     }
@@ -226,9 +236,27 @@
       g.beginPath();
       g.arc(f.x, f.y, f.r, 0, Math.PI * 2);
       g.fill();
-      // little stem so it reads as fruit, no emoji
-      g.fillStyle = "#3a5a2a";
-      g.fillRect(f.x - 2, f.y - f.r - 6, 4, 8);
+      if (f.isBomb) {
+        // bomb: dark ball with a short orange fuse, a yellow spark, and a highlight
+        g.strokeStyle = "#FC5000";
+        g.lineWidth = 3;
+        g.beginPath();
+        g.moveTo(f.x, f.y - f.r);
+        g.lineTo(f.x + 6, f.y - f.r - 9);
+        g.stroke();
+        g.fillStyle = "#F5C84B";
+        g.beginPath();
+        g.arc(f.x + 7, f.y - f.r - 10, 3, 0, Math.PI * 2);
+        g.fill();
+        g.fillStyle = "rgba(255,255,255,0.35)";
+        g.beginPath();
+        g.arc(f.x - f.r * 0.35, f.y - f.r * 0.35, f.r * 0.25, 0, Math.PI * 2);
+        g.fill();
+      } else {
+        // little stem so it reads as fruit, no emoji
+        g.fillStyle = "#3a5a2a";
+        g.fillRect(f.x - 2, f.y - f.r - 6, 4, 8);
+      }
     }
 
     function draw() {

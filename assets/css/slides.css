@@ -112,6 +112,23 @@ body {
   flex: none;
 }
 
+/* Difficulty badge shown in the build-slide eyebrow (Easy / Medium / Challenge) */
+.level {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: 2px;
+  padding: 2px 12px;
+  border-radius: 100px;
+  background: color-mix(in srgb, var(--color-ink-strong) 9%, transparent);
+}
+.level .dots {
+  font-size: 0.95em;
+  line-height: 1;
+  letter-spacing: 2px;
+  color: var(--color-accent-editorial);
+}
+
 /* Headings */
 .slide h1,
 .slide h2 {

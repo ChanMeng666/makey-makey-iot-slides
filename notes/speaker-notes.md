@@ -60,26 +60,28 @@ without the board. Press enter and watch the Artifact panel build the piano live
 This first build is the longest because you are also teaching the rhythm: ask, watch, play. If anyone
 falls behind or the network is slow, open the finished piano with the orange button - it always works.
 
-## 6. Build 2 of 3 - Beat Maker (9:30 - 12:30)
+## 6. Build 2 of 3 - Memory Game (9:30 - 12:30)
 
-Faster now that they have the rhythm. Point out that we barely changed the prompt - we swapped musical
-notes for drum sounds. Name that as a best practice: start from something that works and ask for one
-small change. Build it live, then let two students tap a beat together. Backup is the orange button.
+The first real step up: the app now has to remember a sequence, not just react. That is the jump from a
+toy that responds to one with rules you can win or lose. Read the prompt slowly while they type. Build
+it live, do one round together, then let two students take turns - one watches, one repeats. The four
+arrow pads are exactly four bananas later. Backup is the orange button.
 
-## 7. Build 3 of 3 - Catch Game (12:30 - 15:30)
+## 7. Build 3 of 3 - Catch & Dodge (12:30 - 15:30)
 
-The third toy shows the same trick builds a game, not just sound. Only the arrow keys are used, which
-is perfect for a banana joystick later. Build it live and play one quick round so they see the score
-climb. By now they should believe they can ask Claude for almost anything. If short on time, keep this
-one briefest. Backup is the orange button.
+The challenge build: a full game loop with fruit falling, a basket to steer, and a choice - grab the
+fruit, dodge the bombs. Only the arrow keys are used, which is perfect for a banana joystick later.
+Build it live and play one quick round so they see the score climb and a bomb cost a life. By now they
+should believe they can ask Claude for almost anything. If short on time, keep this one briefest.
+Backup is the orange button.
 
 ## 8. Now add a banana (15:30 - 17:30)
 
 Connect back to the loop from slide 2: real world, signal, computer, action. The big reveal: adding
 the hardware changes nothing in the code - the banana just presses Space or an arrow for you.
 
-Plant ideas for the hands-on time: turn the game into a banana joystick, make foil drum pads, or ask
-Claude to change the sounds. Encourage them to keep asking Claude for small changes.
+Plant ideas for the hands-on time: turn the game into a banana joystick, wire four bananas to the
+memory game, or ask Claude to change the sounds. Encourage them to keep asking Claude for small changes.
 
 ## 9. Your turn + thank you (17:30 - 20:00)
 
@@ -93,7 +95,7 @@ the hands-on session. Leave the demos and handout links up.
 ### Backup plan
 
 - If Claude is slow or blocked on the school network, open the finished toys (`demo/piano/`,
-  `demo/drums/`, `demo/catch/`, or the gallery at `demo/`) and have students play those. The teaching
+  `demo/simon/`, `demo/catch/`, or the gallery at `demo/`) and have students play those. The teaching
   points are identical.
 - The demos need no internet except for fonts; they still work offline with fallback fonts.
 - The deck needs internet only for Google Fonts; it degrades to Impact / system fonts offline.

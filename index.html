@@ -112,9 +112,9 @@
 
     <!-- 5. BUILD 1: BANANA PIANO -->
     <section class="slide">
-      <p class="eyebrow">Build 1 of 3 · Music</p>
+      <p class="eyebrow">Build 1 of 3 · Music<span class="level"><span class="dots">&#9679;&#9675;&#9675;</span> Easy</span></p>
       <h2>A Banana Piano</h2>
-      <p>Press a key, hear a note, watch a big button flash. Our first toy — type this with me.</p>
+      <p>The warm-up: press a key, hear a note, watch a big button flash. Type this with me.</p>
       <div class="prompt prompt--compact">
         <span class="prompt__label">Type this into Claude</span>
         Make a fun web-page piano. When I press Space, the arrow keys, or W A S D F G, play a different musical note and flash a big colourful button for that key. Make it work with a normal keyboard.
@@ -127,37 +127,37 @@
       </div>
     </section>
 
-    <!-- 6. BUILD 2: BEAT MAKER -->
+    <!-- 6. BUILD 2: MEMORY GAME (SIMON SAYS) -->
     <section class="slide">
-      <p class="eyebrow">Build 2 of 3 · Rhythm</p>
-      <h2>A Beat Maker</h2>
-      <p>Same idea, drum sounds instead of notes. Tap out a beat on the keyboard.</p>
+      <p class="eyebrow">Build 2 of 3 · Memory<span class="level"><span class="dots">&#9679;&#9679;&#9675;</span> Medium</span></p>
+      <h2>A Memory Game</h2>
+      <p>A step up: now the app has to <em>remember</em>. Watch a growing colour-and-sound sequence, then repeat it with the arrow keys.</p>
       <div class="prompt prompt--compact">
         <span class="prompt__label">Type this into Claude</span>
-        Make a web-page drum kit. When I press Space, the arrow keys, or W A S D, play a different drum sound — kick, snare, hi-hat, clap — and flash a big pad for that key. Make it work with a normal keyboard.
+        Make a memory game like Simon Says. Show four big coloured pads for the Up, Down, Left and Right arrow keys, each with its own sound. Flash a sequence of pads that gets one longer each round, and I repeat it with the arrow keys. Show the round number, and say game over if I press the wrong one. Make it work with a normal keyboard.
       </div>
       <div class="btn-row">
-        <a class="btn btn--primary" href="demo/drums/index.html">Open the finished beat maker</a>
+        <a class="btn btn--primary" href="demo/simon/index.html">Open the finished memory game</a>
       </div>
       <div class="slide-notes" hidden data-time="9:30 - 12:30">
-        Now they have the rhythm, so this one is faster. Point out that we barely changed the prompt — we swapped musical notes for drum sounds. That is a best practice worth naming: start from something that works and ask for a small change. Build it live, then let two students tap out a beat together. Backup is the orange button. Keep the energy up — this is the noisy, fun one.
+        The first real step up: the app now has to remember a sequence, not just react. That is the jump from a toy that responds to one with rules you can win or lose. Read the prompt slowly while they type. Build it live, do one round together, then let two students take turns — one watches, one repeats. The four arrow pads are exactly four bananas later. Backup is the orange button.
       </div>
     </section>
 
-    <!-- 7. BUILD 3: CATCH GAME -->
+    <!-- 7. BUILD 3: CATCH & DODGE GAME -->
     <section class="slide">
-      <p class="eyebrow">Build 3 of 3 · A game</p>
-      <h2>A Catch Game</h2>
-      <p>Move a basket with the Left and Right arrow keys and catch the falling fruit. Keep score.</p>
+      <p class="eyebrow">Build 3 of 3 · A game<span class="level"><span class="dots">&#9679;&#9679;&#9679;</span> Challenge</span></p>
+      <h2>A Catch &amp; Dodge Game</h2>
+      <p>The challenge: a real game loop. Move a basket with the Left and Right arrow keys to catch the falling fruit for points — but dodge the bombs.</p>
       <div class="prompt prompt--compact">
         <span class="prompt__label">Type this into Claude</span>
-        Make a simple web game. Fruit falls from the top and I move a basket with the Left and Right arrow keys to catch it. Show the score and speed it up over time. Make it work with a normal keyboard.
+        Make a simple web game. Good fruit and bombs fall from the top. I move a basket with the Left and Right arrow keys to catch the fruit for points but dodge the bombs. Catching a bomb costs a life, and the game speeds up over time. Show the score and lives. Make it work with a normal keyboard.
       </div>
       <div class="btn-row">
         <a class="btn btn--primary" href="demo/catch/index.html">Open the finished game</a>
       </div>
       <div class="slide-notes" hidden data-time="12:30 - 15:30">
-        The third toy shows that the same trick builds a game, not just sound. Only the arrow keys are used, which is perfect for a banana joystick later. Build it live and play one quick round so they see the score climb. By now they should believe they can ask Claude for almost anything. Backup is the orange button. If you are short on time, this is the build to keep briefest.
+        The challenge build: a full game loop with fruit falling, a basket to steer, and a choice — grab the fruit, dodge the bombs. Still only the arrow keys, so it is perfect for a banana joystick later. Build it live and play one quick round so they see the score climb and a bomb cost a life. By now they should believe they can ask Claude for almost anything. Backup is the orange button. If short on time, keep this one briefest.
       </div>
     </section>
 
@@ -166,14 +166,14 @@
       <p class="eyebrow">The bridge</p>
       <h2>Now add a banana</h2>
       <p>Clip Makey Makey to fruit, foil, or playdough and those keys become things you can touch. <span class="highlight">Same toys, same code — just a new way to press the keys.</span></p>
-      <p>That is the bridge between the real world and code: your touch becomes a tiny signal, the computer reads it, and your toy responds — piano, drums, or game.</p>
+      <p>That is the bridge between the real world and code: your touch becomes a tiny signal, the computer reads it, and your toy responds — piano, memory game, or catch game.</p>
       <ul>
         <li>Bananas on the arrow keys turn the catch game into a body controller.</li>
-        <li>Foil pads become drum triggers you can stomp or slap.</li>
+        <li>Four bananas become the four pads of the memory game.</li>
         <li>Ask Claude for one more change — your own sounds, new colours, a high score.</li>
       </ul>
       <div class="slide-notes" hidden data-time="15:30 - 17:30">
-        Connect back to the IoT loop from slide two: real world, signal, computer, action. The big reveal is that adding the hardware changes nothing in the code — the banana just presses Space or an arrow for you. In a moment they will get the boards and do exactly this with any of the three toys. Plant ideas so the hands-on time has direction: turn the game into a banana joystick, make foil drum pads, or ask Claude to change the sounds. Encourage them to keep asking Claude for small changes.
+        Connect back to the IoT loop from slide two: real world, signal, computer, action. The big reveal is that adding the hardware changes nothing in the code — the banana just presses Space or an arrow for you. In a moment they will get the boards and do exactly this with any of the three toys. Plant ideas so the hands-on time has direction: turn the game into a banana joystick, wire four bananas to the memory game, or ask Claude to change the sounds. Encourage them to keep asking Claude for small changes.
       </div>
     </section>
 
