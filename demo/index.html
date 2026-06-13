@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Three Demos — Touch the World, Talk to Code</title>
-  <meta name="description" content="Three keyboard-playable IoT toys built with Claude: a Banana Piano, a Memory Game, and a Catch &amp; Dodge Game. Each works with a Makey Makey too." />
+  <meta name="description" content="Keyboard-playable IoT toys built with Claude: a Banana Piano, a Memory Game, a Catch &amp; Dodge Game, plus a bonus Super Mario showcase. Each works with a Makey Makey too." />
 
   <link rel="icon" type="image/svg+xml" href="../assets/brand/favicon.svg" />
 
@@ -51,6 +51,12 @@
     .demo-card:hover { transform: translateY(-3px); }
     .demo-card .num {
       font-family: var(--font-display); font-size: 40px; color: var(--color-accent-primary); line-height: 1;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .demo-card .num .tag {
+      font-family: var(--font-body-sans); font-size: 12px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-strong);
+      background: var(--color-surface-glare); padding: 3px 10px; border-radius: 100px;
     }
     .demo-card h2 {
       font-family: var(--font-display); font-weight: 400; letter-spacing: 0.02em;
@@ -77,11 +83,12 @@
 </head>
 <body>
   <div class="wrap">
-    <p class="eyebrow">Built live with Claude</p>
-    <h1>Three toys to play</h1>
+    <p class="eyebrow">Built with Claude</p>
+    <h1>Four toys to play</h1>
     <p class="sub">
-      Each one is a finished version of what we build in the talk. Play them with your keyboard now —
-      every key is labelled with the Makey Makey button it becomes, so you can picture the banana version.
+      The first three are finished versions of what we build live in the talk. The fourth is a bonus —
+      a Super Mario level made with the pro tools. Play them all with your keyboard now: every key is
+      labelled with the Makey Makey button it becomes, so you can picture the banana version.
     </p>
 
     <div class="cards">
@@ -104,6 +111,13 @@
         <h2>Catch &amp; Dodge</h2>
         <p>Catch the falling fruit with the basket — but dodge the bombs.</p>
         <p class="keys">Left · Right arrow keys</p>
+        <span class="go">Play it</span>
+      </a>
+      <a class="demo-card demo-card--bonus" href="mario/index.html">
+        <span class="num">&#9733;<span class="tag">Bonus</span></span>
+        <h2>Super Mario</h2>
+        <p>A full pixel-art Mario level — the ceiling, made with Claude's pro tools.</p>
+        <p class="keys">arrows · Space · Click</p>
         <span class="go">Play it</span>
       </a>
     </div>

@@ -75,6 +75,23 @@ Build it live and play one quick round so they see the score climb and a bomb co
 should believe they can ask Claude for almost anything. If short on time, keep this one briefest.
 Backup is the orange button.
 
+## Bonus. Super Mario showcase (optional — skip if short on time)
+
+Optional crowd-pleaser that sits **outside** the 20-minute budget — drop it the moment you are tight on
+the clock. The point is honesty about tools: the three toys they just built came from the **free**
+claude.ai in the browser, and that is genuinely enough. This Mario level is the ceiling — same idea
+(talk to an AI, get a toy) but made with a paid model called **Fable 5**, driven through **Claude
+Code**, a developer tool rather than the chat box.
+
+Read the one-sentence prompt aloud and let it land that the whole game came from that single line:
+
+> Create a Mario mini-game with high fidelity and precision, and make it look visually appealing.
+
+Stress that nothing is a downloaded asset — every pixel and every sound is generated in code. Play ten
+seconds (jump on a Goomba, hit a question block), then tie it back: it still runs on the same arrows,
+Space, and Click, so a banana would drive Mario just like the other three. Do **not** ask them to
+recreate it — that needs paid tooling. Inspire, then move on.
+
 ## 8. Now add a banana (15:30 - 17:30)
 
 Connect back to the loop from slide 2: real world, signal, computer, action. The big reveal: adding
@@ -95,7 +112,7 @@ the hands-on session. Leave the demos and handout links up.
 ### Backup plan
 
 - If Claude is slow or blocked on the school network, open the finished toys (`demo/piano/`,
-  `demo/simon/`, `demo/catch/`, or the gallery at `demo/`) and have students play those. The teaching
-  points are identical.
+  `demo/simon/`, `demo/catch/`, the bonus `demo/mario/`, or the gallery at `demo/`) and have students
+  play those. The teaching points are identical.
 - The demos need no internet except for fonts; they still work offline with fallback fonts.
 - The deck needs internet only for Google Fonts; it degrades to Impact / system fonts offline.

@@ -4,7 +4,9 @@ A 20-minute teaching slideshow about **IoT hardware** for students aged 12-18, w
 demos that step up in difficulty. Students use **Claude** (free, in the browser) to vibe-code three fun
 web toys — an easy **Banana Piano**, a medium **Memory Game** (Simon Says), and a challenge
 **Catch & Dodge Game** — then bring them to life with a **Makey Makey** board in the hands-on session
-afterwards.
+afterwards. A fourth toy, a pixel-art **Super Mario** level, rides along as a bonus *showcase* — built
+with the paid **Fable 5** model through **Claude Code** to show the ceiling, not for students to rebuild
+on the free tier.
 
 The whole thing is static HTML/CSS/JS — no build step — and deploys to **GitHub Pages** as-is.
 Styled with Chan Meng's "Caldera" personal brand system.
@@ -31,11 +33,12 @@ it is fast, we can build three toys in 20 minutes and show students more than on
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | The 9-slide deck. Arrow keys / Space to move, `N` for speaker notes. |
-| `demo/index.html` | Gallery hub linking the three finished toys. |
+| `index.html` | The 11-slide deck. Arrow keys / Space to move, `N` for speaker notes. |
+| `demo/index.html` | Gallery hub linking the three finished toys plus the bonus Mario. |
 | `demo/piano/index.html` | Banana Piano (easy) — keyboard-playable, Web Audio notes (no sound files). |
 | `demo/simon/index.html` | Memory Game (medium) — Simon Says on the four arrow pads, Web Audio tones. |
 | `demo/catch/index.html` | Catch & Dodge (challenge) — arrow-key basket catches fruit and dodges bombs, with score and lives. |
+| `demo/mario/index.html` | **Bonus showcase** — a Canvas Super Mario World 1-1 (every pixel and sound drawn/synthesised in code). Made with Fable 5 via Claude Code, not a build-along; runs on the same arrows, Space, and Click. Live at [super-mario-makey-makey](https://chanmeng666.github.io/super-mario-makey-makey/). |
 | `handout/index.html` | One-page printable student handout with all three prompts. |
 | `notes/speaker-notes.md` | Per-slide talking points with minute-by-minute timing. |
 | `assets/` | Brand tokens, deck styles, navigation script, logo + halftone art. |
@@ -75,7 +78,9 @@ The three build-along prompts (kept short on purpose), rising from easy to chall
    - Demos: `https://<user>.github.io/<repo>/demo/`
    - Handout: `https://<user>.github.io/<repo>/handout/`
 
-A `.nojekyll` file is included so the `assets/` and `demo/` folders are served unchanged.
+A `.nojekyll` file is included so the `assets/` and `demo/` folders are served unchanged. The bonus
+Mario in `demo/mario/` loads several local `.js` files, so it must be served over HTTP (GitHub Pages or
+a local server) — opening it via `file://` will not run.
 
 ## Notes
 
